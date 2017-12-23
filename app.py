@@ -1,9 +1,4 @@
-"""
-This script runs the application using a development server.
-It contains the definition of routes and views for the application.
-"""
-
-from flask import Flask
+from flask import Flask, render_template
 import requests
 
 app = Flask(__name__)
@@ -31,10 +26,7 @@ def getAuthorsCount():
     count = [0] * (len(data)+1)
     for i in posts:
        count[i['userId']] += 1
-    authors = '<b>Hello! Below is the list containing name of authors and a count of thier posts</b><br><br><br>'
-    for i in data:
-        authors += '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><i>' + i['name'] + '</i></b> has published <b>' + str(count[i['id']]) + '</b> articles' '<br><br>'
-    return authors
+    return render_template('authors.html', data = data, count = count)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='127.0.0.1', port=8080, debug=True)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
+<head>
+    <title>Authors|HPDF Task 1</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Author Name</th>
+            <th>No of posts</th>
+        </tr>
+        {% for i in data %}
+            <tr>
+                <td>{{ i['name'] }}</td>
+                <td>{{ count[i['id']] }}</td>
+            </tr>
+        {% endfor %}
+</table>
+</body>
+</html>
