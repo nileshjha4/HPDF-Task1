@@ -1,0 +1,27 @@
+{% extends "outline.html" %}
+
+{% block head %}
+    <title>Set-Cookies|HPDF Task 1</title>
+    <style type="text/css">
+        
+        input{
+                margin:20px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block heading %}HPDF TASK 1 - Generate Cookie{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="/setcookie/" method="POST">
+            <b>Name:</b>
+            <input type="text" name="name" placeholder="Enter your name">
+            <b>Age:</b>
+            <input type="number" name="age" placeholder="Enter your age">
+            <br>
+            <input type="submit" value="Generate Cookie">
+        </form>
+    </div>
+{% endblock %}
