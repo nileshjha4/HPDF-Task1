@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends "outline.html" %}
+
+{% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
-<head>
     <title>Authors|HPDF Task 1</title>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <table>
         <tr>
             <th>Author Name</th>
@@ -16,6 +17,5 @@
                 <td>{{ count[i['id']] }}</td>
             </tr>
         {% endfor %}
-</table>
-</body>
-</html>
+    </table>
+{% endblock %}
