@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, send_file
 import requests
 
 app = Flask(__name__)
@@ -34,5 +34,8 @@ def getCookie():
 def deny():
     return render_template('deny.html'), 404
 
+@app.route('/image')
+def image():
+    return send_file('media\\homer-simpson.jpg')
 if __name__ == '__main__':
     app.run(debug=True)
