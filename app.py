@@ -30,5 +30,9 @@ def setCookie():
 def getCookie():
     return render_template('getcookie.html', name=request.cookies.get('name'), age=request.cookies.get('age') )
 
+@app.route('/robot.txt')
+def deny():
+    return render_template('deny.html'), 404
+
 if __name__ == '__main__':
     app.run(debug=True)
