@@ -23,18 +23,17 @@ def setCookie():
         resp.set_cookie('name', request.form.get('name') )
         resp.set_cookie('age', request.form.get('age') )
         return resp
-    elif request.method == 'GET' :
-        return render_template('setcookie.html')
+    return render_template('setcookie.html')
 
 @app.route('/getcookie/')
 def getCookie():
     return render_template('getcookie.html', name=request.cookies.get('name'), age=request.cookies.get('age') )
 
-@app.route('/robot.txt')
+@app.route('/robot.txt/')
 def deny():
     return render_template('deny.html'), 404
 
-@app.route('/image')
+@app.route('/image/')
 def image():
     return send_file('media\\homer-simpson.jpg')
 
@@ -44,7 +43,6 @@ def input():
         print(request.form.get('text'))
         return 'POST Data log to stdout sucessfully! Please check terminal.'
     return render_template('input.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
