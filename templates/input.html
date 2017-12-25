@@ -1,0 +1,21 @@
+{% extends "outline.html" %}
+
+{% block head %}
+    <title>Input|HPDF Task 1</title>
+    <style type="text/css">
+        
+        input{
+                margin:20px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block heading %}HPDF TASK 1 - Read Cookie{% endblock %}
+
+{% block content %}
+    <form action="/input/" method="POST">
+        <b>Enter your text:</b><br>
+        <input type="textarea" name="text" placeholder="Enter text here">
+    </form>
+{% endblock %}

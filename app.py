@@ -37,5 +37,14 @@ def deny():
 @app.route('/image')
 def image():
     return send_file('media\\homer-simpson.jpg')
+
+@app.route('/input/', methods=['GET','POST'])
+def input():
+    if request.method=='POST':
+        print(request.form.get('text'))
+        return 'POST Data log to stdout sucessfully! Please check terminal.'
+    return render_template('input.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
